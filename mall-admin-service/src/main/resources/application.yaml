@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: up-data-model
+  datasource:
+    password: password
+    url: jdbc:mysql://localhost:6033/mall?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 30000
+      maxLifetime: 2000000
+      maximumPoolSize: 500
+      minimumIdle: 5
+      poolName: HikariPoolUserProfile
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  graphql:
+    graphiql:
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+
+minio:
+  endPoint: http://localhost:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: mallimage
